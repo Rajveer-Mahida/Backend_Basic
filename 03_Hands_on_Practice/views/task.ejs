@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Task Detail</title>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900 p-10 text-white">
+        
+        <a href="/" class="bg-zinc-500 p-2 rounded-md inline-block  mb-10"> Go Back To Home </a>
+        <div class="text-3xl font-bold block"> <%= title.split("_").join(" ").toUpperCase()  %> </div>
+        <p class="text-md text-xl mt-5 font-medium  ">  <%= description  %>  </p>
+
+      </div>
+    </div>
+  </body>
+</html>

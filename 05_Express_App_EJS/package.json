@@ -1,0 +1,28 @@
+{
+  "name": "05_express_app_ejs",
+  "version": "1.0.0",
+  "description": "A NodeJS App For CURD Operation with MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "ExpressJS",
+    "MongoDB",
+    "CURD",
+    "NodeJS",
+    "Bcrypt"
+  ],
+  "author": "Rajveer Mahida",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

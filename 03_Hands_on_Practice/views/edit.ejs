@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo Page</title>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+      <div class="form p-10 text-white" >
+        <a href="/" class="bg-zinc-500 p-2 rounded-md inline-block  mb-10"> Go Back To Home </a>  
+        <form action="/edit" method="post">
+            
+          <label class="block mt-2 text-md inline-block">Task Name</label>
+          <input class="input block mt-2 px-5 py-2 bg-zinc-800 w-full lg:w-5/12  rounded-md outline-none" type="text" name="title" placeholder="<%= title %>" value="<%= title %>"> </input>
+          <input class="input block mt-2 px-5 py-2 bg-zinc-800 w-full lg:w-5/12  rounded-md outline-none hidden" type="text" name="oldTitle"  value="<%= title %>"> </input>
+
+          <label class="block mt-2 text-md inline-block">Description</label>
+          <textarea class="input block mt-2 px-5 py-2 resize-none bg-zinc-800  w-full lg:w-5/12 rounded-md outline-none" type="text" name="description"  placeholder="Update Description" value="<%= description %>"><%= description %></textarea>
+
+          <div class="flex justify-start gap-4 items-center w-full lg:w-5/12 mt-5">
+            <input class="input block px-5 py-2 mt-2 bg-yellow-600 rounded-md cursor-pointer " type="submit" value="Update Task"> 
+            <a href="/delete/<%= title  %>" class="text-white lock px-5 py-2 mt-2 rounded-md cursor-pointer  bg-red-500 ">Delete</a>
+
+          </div>
+          
+        </form>
+      </div>
+     
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo Page</title>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+
+      <div>
+        <h1 class="text-3xl font-bold text-white text-center  p-3">Todo App 📝</h1>
+      </div>
+
+      <div class="form m-8 sm:m-10 text-white" >
+        <form action="/create" method="post">
+          <input class="input block mt-5 px-5 py-2 bg-zinc-800 w-full lg:w-5/12  rounded-md outline-none" type="text" name="title" placeholder="Enter Task Title"> </input>
+          <textarea class="input block mt-5 px-5 py-2 resize-none bg-zinc-800  w-full lg:w-5/12 rounded-md outline-none" type="text" name="description" placeholder="Enter Description ..."></textarea>
+          <input class="input block px-5 py-2 mt-5 bg-blue-600 rounded-md cursor-pointer " type="submit" value="Create Task"> 
+        </form>
+      </div>
+      <div class="tasks text-white flex gap-3 flex-wrap pl-10 pr-10 pb-10">
+        <h2 class="text-white text-xl block w-full font-extrabold">Task List</h2>
+        <%  if(files.length > 0 ){ %>
+          <% files.forEach(file => {  %>
+
+                <% const taskTitle = file.split(".txt").join(" ").toUpperCase().split("_").join(" ")    %>
+                <% const taskPath = file.split(".txt").join("")   %>
+
+                <div class="task sm:basis-1/6 w-full py-2 px-5 rounded-md bg-zinc-800 ">
+                    <h1 class="text-xl w-60 tracking-tighter truncate overflow-hidden "> <%= taskTitle %>  </h1>
+                  <div class="flex justify-between items-center gap-5 mt-3 ">
+                    <a href="/task/<%= taskPath %>" class="text-blue-500 inline-block ">See Task</a>
+                    <a href="/edit/<%= taskPath %>" class="text-zinc-500 inline-block ">Edit</a>
+                    <a href="/delete/<%= taskPath %>" class="text-red-600 inline-block">Delete</a>
+                  </div>
+                </div>
+              <% }) %>
+        <% } else {  %>
+          <div class="text-zinc-500"> No Task To Do !</div> 
+        <% } %>
+
+     
+
+      </div>
+    </div>
+  </body>
+</html>
